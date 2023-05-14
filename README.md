@@ -63,8 +63,28 @@ D7 = X Y Z
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
 Developed by: 
-RegisterNumber:  
-*/
+RegisterNumber:Y Pavithra
+ENCODER 
+module EX8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+*/output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+end module
+DECODER
+module EX7(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c); assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+end module
+
 
 
 
@@ -72,25 +92,34 @@ RegisterNumber:
 
 
 ### RTL LOGIC  
+ENCODER
+![rtl encoder](https://github.com/pavithra2200891/Experiment-08-Encoders-and-decoders-/assets/128951583/1c5462f8-35a8-4694-848d-d7db22888bc0)
 
 
-
+DECODER
+![rtl decoder](https://github.com/pavithra2200891/Experiment-08-Encoders-and-decoders-/assets/128951583/d488935b-d286-49c3-812a-3329109866ac)
 
 
 
 
 
 ### TIMING DIGRAMS  
-
-
+ENCODER
+![timing diagram encoder](https://github.com/pavithra2200891/Experiment-08-Encoders-and-decoders-/assets/128951583/bf71bf62-51ff-4acb-ab7d-c0203f724460)
+DECODER
+![timing diagram decoder](https://github.com/pavithra2200891/Experiment-08-Encoders-and-decoders-/assets/128951583/c51ca853-4f72-4cb6-a0c0-44b53e732001)
 
 
 
 ### TRUTH TABLE 
+ENCODER
+![TT encoder](https://github.com/pavithra2200891/Experiment-08-Encoders-and-decoders-/assets/128951583/9d56a93e-d2a3-4c27-82ad-13a0fc068ec8)
 
-
+DECODER
+![TTdecoder](https://github.com/pavithra2200891/Experiment-08-Encoders-and-decoders-/assets/128951583/d84abc8e-89ce-4d21-9c1c-54bbc647e6c4)
 
 
 
 
 ### RESULTS 
+Thus the program to design encoder and decoder is completed
